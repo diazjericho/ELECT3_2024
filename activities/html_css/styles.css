@@ -1,0 +1,56 @@
+/* Ensure the table and button take up the full screen width */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.table-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ff5733;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c44126;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+    height: 70%;
+}
+
+th, td {
+    border: 2px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #f2f2f2;
+}
