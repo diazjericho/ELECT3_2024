@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<h1>Login Form</h1>
+<form id="loginForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username"><br><br>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password"><br><br>
+
+  <button type="submit">Login</button>
+  <p class="error" id="errorMessage"></p>
+</form>
+
+<script>
+  $(document).ready(function(){
+    $("#loginForm").submit(function(event){
+      event.preventDefault();
+      let username = $("#username").val();
+      let password = $("#password").val();
+
+      if(username === "" || password === "") {
+        $("#errorMessage").text("All fields are required.");
+      } else {
+        $("#errorMessage").text("Login successful!");
+      }
+    });
+  });
+</script>
+</body>
+</html>

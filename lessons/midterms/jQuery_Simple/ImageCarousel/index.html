@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Carousel</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #carousel img {
+            display: none;
+            height: auto;
+        }
+        #carousel img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Image Carousel</h1>
+<div id="carousel">
+    <img src="image1.png" class="active" width="50" height="50">
+    <img src="image2.png" width="50" height="50">
+    <img src="image3.png" width="50" height="50">
+    <img src="image4.png" width="50" height="50">
+    <img src="image5.png" width="50" height="50">
+</div>
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+
+<script>
+    $(document).ready(function(){
+        let currentIndex = 0;
+        const images = $("#carousel img");
+        const totalImages = images.length;
+
+        $("#nextBtn").click(function(){
+            images.eq(currentIndex).removeClass("active");
+            currentIndex = (currentIndex + 1) % totalImages;
+            images.eq(currentIndex).addClass("active");
+        });
+
+        $("#prevBtn").click(function(){
+            images.eq(currentIndex).removeClass("active");
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            images.eq(currentIndex).addClass("active");
+        });
+    });
+</script>
+</body>
+</html>
