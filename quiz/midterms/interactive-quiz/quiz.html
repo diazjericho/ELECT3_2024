@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Simple Web Quiz</h1>
+</header>
+
+<section id="nameDisplay" class="hidden">
+  <h2>Hello, <span id="displayName"></span>!</h2>
+</section>
+
+<section class="instructions">
+  <h2>Instructions</h2>
+  <p>Answer the following multiple-choice questions. Your progress will be shown below, and you will see your score after submission. Make sure to fill out your name and email.</p>
+</section>
+
+<section class="form-section">
+  <form id="quizForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+
+    <h2>Quiz Questions</h2>
+
+    <!-- Progress Bar -->
+    <div id="progressBar">
+      <div id="progress"></div>
+    </div>
+
+    <div class="form-group">
+      <label>1. What is HTML?</label>
+      <div>
+        <input type="radio" name="question1" value="A"> A) Hyperlinks and Text Markup Language<br>
+        <input type="radio" name="question1" value="B"> B) Hypertext Markup Language<br>
+        <input type="radio" name="question1" value="C"> C) Home Tool Markup Language
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>2. What does CSS stand for?</label>
+      <div>
+        <input type="radio" name="question2" value="A"> A) Creative Style Sheets<br>
+        <input type="radio" name="question2" value="B"> B) Cascading Style Sheets<br>
+        <input type="radio" name="question2" value="C"> C) Computer Style Sheets
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>3. What is JavaScript primarily used for?</label>
+      <div>
+        <input type="radio" name="question3" value="A"> A) Structuring Web Pages<br>
+        <input type="radio" name="question3" value="B"> B) Styling Web Pages<br>
+        <input type="radio" name="question3" value="C"> C) Adding interactivity to Web Pages
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>4. Which jQuery function is used to hide an element?</label>
+      <div>
+        <input type="radio" name="question4" value="A"> A) .hide()<br>
+        <input type="radio" name="question4" value="B"> B) .vanish()<br>
+        <input type="radio" name="question4" value="C"> C) .remove()
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" id="submitQuiz">Submit Quiz</button>
+    </div>
+  </form>
+</section>
+
+<section id="resultSection" class="hidden">
+  <h2>Your Score</h2>
+  <p id="scoreMessage"></p>
+
+  <div id="feedback">
+    <!-- Correct/Incorrect Answers will be displayed here -->
+  </div>
+</section>
+
+</body>
+</html>
